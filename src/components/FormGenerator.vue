@@ -1,103 +1,44 @@
 <script setup>
-import { reactive } from "vue";
+import "@ditdot-dev/vue-flow-form/dist/vue-flow-form.css";
+import "@ditdot-dev/vue-flow-form/dist/vue-flow-form.theme-purple.css";
 
-import InputLabel from "./InputLabel.vue";
-import InputForm from "./InputForm.vue";
+import { FlowForm, LanguageModel } from "@ditdot-dev/vue-flow-form";
+import FormQuestions from "@/data/questions.js";
 
-import GraphIcon from "./icons/GraphIcon.vue";
-
-const parametros = reactive([
-  {
-    label: "Diversificación de renta",
-    descricao:
-      "Uma breve descrição sobre este ponto para esclarecer ao usuário.",
-    valor: 10,
-  },
-  {
-    label: "¿Sabes ahorrar?",
-    descricao:
-      "Uma breve descrição sobre este ponto para esclarecer ao usuário.",
-    valor: 10,
-  },
-  {
-    label: "¿Sabes invertir?",
-    descricao:
-      "Uma breve descrição sobre este ponto para esclarecer ao usuário.",
-    valor: 10,
-  },
-  {
-    label: "¿Sabes usar su dinero de forma consciente?",
-    descricao:
-      "Uma breve descrição sobre este ponto para esclarecer ao usuário.",
-    valor: 10,
-  },
-  {
-    label: "Círculo social",
-    descricao:
-      "Uma breve descrição sobre este ponto para esclarecer ao usuário.",
-    valor: 10,
-  },
-  {
-    label: "Objetivos e metas",
-    descricao:
-      "Uma breve descrição sobre este ponto para esclarecer ao usuário.",
-    valor: 10,
-  },
-  {
-    label: "Monitora sus finanzas",
-    descricao:
-      "Uma breve descrição sobre este ponto para esclarecer ao usuário.",
-    valor: 10,
-  },
-  {
-    label: "Pensamientos de impulsión",
-    descricao:
-      "Uma breve descrição sobre este ponto para esclarecer ao usuário.",
-    valor: 10,
-  },
-  {
-    label: "Evitas procrastinación",
-    descricao:
-      "Uma breve descrição sobre este ponto para esclarecer ao usuário.",
-    valor: 10,
-  },
-  {
-    label: "Agradece y celebra",
-    descricao:
-      "Uma breve descrição sobre este ponto para esclarecer ao usuário.",
-    valor: 10,
-  },
-]);
+// We first start our LanguageModel instance with Localization settings
+// This is a object as defined in @ditdot-dev/vue-flow-form/dist/vue-flow-form
+const formLanguageModel = new LanguageModel({
+  ok: "OK",
+  continue: "Continuar",
+  skip: "Pular pregunta",
+  pressEnter: "Presione :enterKey",
+  multipleChoiceHelpText: "Elija cuantas te gustar",
+  multipleChoiceHelpTextSingle: "Elija solamenta una opción",
+  otherPrompt: "Otro",
+  placeholder: "Escriba su resposta acá",
+  submitText: "Enviar",
+  prev: "Anterior",
+  next: "Adelante",
+  percentCompleted: ":percent% completado",
+  invalidPrompt: "Por favor completa correctamente",
+  thankYouText: "Obrigado",
+  successText: "Tu solicitud está completa",
+  longTextHelpText: ":shiftKey + :enterKey para hacer una quebra de línea",
+  ariaOk: "Presione para continuar",
+  ariaRequired: "Este campo es obligatorio",
+  ariaPrev: "Próximo paso",
+  ariaNext: "Paso anterior",
+  ariaSubmitText: "Presione para enviar",
+  ariaMultipleChoice: "Pressione :letter para selecionar",
+  ariaTypeAnswer: "Escriba tu respuesta acá",
+});
 </script>
 
 <template>
-  <form>
-    <div class="w-full mb-3 md:columns-2 md:gap-8">
-      <div
-        class="flex flex-col gap-1 mb-3"
-        :key="parametro.label"
-        v-for="parametro in parametros"
-      >
-        <InputLabel :for="'item_' + parametro.index" :value="parametro.label" />
-        <InputForm
-          :id="'item_' + parametro.index"
-          v-model="parametro.valor"
-          placeholder="5"
-          type="number"
-          class="w-full"
-        />
-      </div>
-    </div>
-
-    <div class="w-full">
-      <button
-        class="inline-flex items-center justify-center w-full gap-4 px-10 py-5 font-bold uppercase rounded shadow-md group bg-gradient-to-br text-purple-50 from-purple-600 to-purple-800 via-violet-600 grow"
-      >
-        <GraphIcon
-          class="w-10 stroke-purple-300 group-hover:animate-pulse"
-        />
-        <span class="text-xl text-left">QUIERO MI RESULTADO</span>
-      </button>
-    </div>
-  </form>
+  <FlowForm
+    :standalone="false"
+    :progressbar="false"
+    :questions="FormQuestions"
+    :language="formLanguageModel"
+  />
 </template>
