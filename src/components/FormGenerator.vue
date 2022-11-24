@@ -2,8 +2,13 @@
 import "@ditdot-dev/vue-flow-form/dist/vue-flow-form.css";
 import "@ditdot-dev/vue-flow-form/dist/vue-flow-form.theme-purple.css";
 
+import { useRouter } from "vue-router";
 import { FlowForm, LanguageModel } from "@ditdot-dev/vue-flow-form";
 import FormQuestions from "@/data/questions.js";
+
+import CryptoJS from "crypto-js";
+
+const router = useRouter();
 
 // We first start our LanguageModel instance with Localization settings
 // This is a object as defined in @ditdot-dev/vue-flow-form/dist/vue-flow-form
@@ -32,10 +37,21 @@ const formLanguageModel = new LanguageModel({
   ariaMultipleChoice: "Pressione :letter para selecionar",
   ariaTypeAnswer: "Escriba tu respuesta acá",
 });
+
+// This is our form handler, to collect and process all of our submissions
+const onSubmitForm = (questionList) => {
+  const encryptedResult = CryptoJS.AES.encrypt(
+    JSON.stringify(questionList),
+    "SoyCaroMolina"
+  ).toString();
+
+  router.push({ name: "chart", params: { hash: encryptedResult } });
+};
 </script>
 
 <template>
   <FlowForm
+    @submit="onSubmitForm"
     :standalone="false"
     :progressbar="false"
     :questions="FormQuestions"
