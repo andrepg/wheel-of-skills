@@ -38,14 +38,17 @@ const formLanguageModel = new LanguageModel({
   ariaTypeAnswer: "Escriba tu respuesta acá",
 });
 
+const encryptChartResult = (stringToEncrypt) =>
+  CryptoJS.AES.encrypt(stringToEncrypt, "SoyCaroMolina").toString();
+
 // This is our form handler, to collect and process all of our submissions
 const onSubmitForm = (questionList) => {
-  const encryptedResult = CryptoJS.AES.encrypt(
-    JSON.stringify(questionList),
-    "SoyCaroMolina"
-  ).toString();
-
-  router.push({ name: "chart", params: { hash: encryptedResult } });
+  router.push({
+    name: "chart",
+    state: {
+      chart: encryptChartResult(JSON.stringify(questionList)),
+    },
+  });
 };
 </script>
 
