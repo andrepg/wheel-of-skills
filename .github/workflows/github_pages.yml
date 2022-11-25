@@ -30,19 +30,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      
       - uses: borales/actions-yarn@v3.0.0
         with:
           cmd: install 
+      
       - uses: borales/actions-yarn@v3.0.0
         with:
           cmd: build 
+      
       - name: Setup Pages
         uses: actions/configure-pages@v2
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: './dist'
+          path: | 
+            .
+            | !node_modules
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
