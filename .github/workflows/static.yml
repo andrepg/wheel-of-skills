@@ -22,6 +22,16 @@ concurrency:
 
 jobs:
   # Single deploy job since we're just deploying
+  build_app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: install 
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: build 
   deploy:
     environment:
       name: github-pages
