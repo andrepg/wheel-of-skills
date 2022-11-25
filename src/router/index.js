@@ -12,10 +12,15 @@ const router = createRouter({
     },
 
     {
-      path: "/chart/:hash",
+      path: "/chart",
       name: "chart",
-      props: true,
       component: () => import("../views/ChartView.vue"),
+    },
+
+    {
+      path: "/:pathMatch(.*)",
+      name: "NotFound",
+      redirect: "/",
     },
   ],
 });
