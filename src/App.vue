@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView } from "vue-router";
-import NavigationBar from "@/components/NavigationBar.vue";
+import NavigationBar from "@/components/navigation/NavigationBar.vue";
 import HeroWeb from "@/Images/HeroWeb.jpg";
 import { onMounted, ref } from "vue";
 
@@ -15,7 +15,7 @@ onMounted(() => {
   <NavigationBar />
   <section
     ref="mainContainer"
-    class="flex justify-center bg-center bg-cover bg-blend-multiply align-middle flex-col z-0 relative min-h-screen w-full overflow-x-clip pt-16 bg-gradient-to-t from-violet-600 to-purple-900"
+    class="relative z-0 flex flex-col justify-center w-full min-h-screen pt-16 align-middle bg-center bg-cover bg-blend-multiply overflow-x-clip bg-gradient-to-t from-violet-600 to-purple-900"
   >
     <RouterView />
   </section>
