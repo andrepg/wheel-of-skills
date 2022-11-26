@@ -24,6 +24,13 @@ const newQuestionOpinionScale = (
   });
 
 const FormQuestions = [
+  new QuestionModel({
+    tagline: "📊 Bienvenido a la encuesta Caro Molina",
+    type: QuestionType.SectionBreak,
+    title: "Hola. Es un placer ayudarte a organizar tus finanzas.",
+    content:
+      "Em primer lugar, vamos conocerte un poco y preguntarle algunas cosas. Recuerde contestar todas con mucha sinceridad.",
+  }),
   newQuestionOpinionScale(
     "diversificacionRenta",
     "Tu nivel de diversificación de renta",
@@ -34,31 +41,31 @@ const FormQuestions = [
     "habilidadAhorro",
     "Tu habilidad de ahorrar mensualmente",
     "Evalúa tu habilidad de mantener un plan de ahorro mensual, guardando parte de tu renta para reinversión",
-    "#86198f"
+    "#facc15"
   ),
   newQuestionOpinionScale(
     "habilidadInversiones",
     "Tu habilidad de inversiones y generar renta",
     "Evalúa tu habilidad de generar renta y buscar nuevas inversiones para diversificación",
-    "#a21caf"
+    "#84cc16"
   ),
   newQuestionOpinionScale(
     "evaluacionCirculoSocial",
     "Evaluación de su círculo social y usted",
     "Evalúa cuánto tu círculo social está alineado con tus objetivos y metas financieras, además de tu alineamiento de ideales",
-    "#c026d3"
+    "#06b6d4"
   ),
   newQuestionOpinionScale(
     "habilidadCrearObjetivos",
     "¿Cuál tu habilidad de crear objetivos y cumplir sus metas?",
     "Evalúa si tienes disciplina para crear planes de ahorro, metas de vida y cumplir tus metas establecidas",
-    "#d946ef"
+    "#4c1d95"
   ),
   newQuestionOpinionScale(
     "rastreoFinanzas",
     "Tu rastreo de finanzas, gastos y costos",
     "Evalúa el nivel de rastreo de finanzas, gastos mensuales, inversiones, costos y todo el flujo financiero de tu mes",
-    "#e879f9"
+    "#f43f5e"
   ),
   newQuestionOpinionScale(
     "nivelResistenciaImpulsion",
@@ -70,13 +77,13 @@ const FormQuestions = [
     "nivelEvitarProcrastinacion",
     "¿Cuánto evitas la procrastinación?",
     "Evalúa tu facilidad de evitar la procrastinación cuándo estés con cosas en tu lista y necesitas cumplir tus objetivos",
-    "#f5d0fe"
+    "#a21caf"
   ),
   newQuestionOpinionScale(
     "nivelGratitudCelebracion",
     "Tu nivel de gratitud y celebración",
     "¿Cuál tu nivel de gratitud y celebración cuando alcanzas tu objetivo o meta?",
-    "#fae8ff"
+    "#ec4899"
   ),
 ];
 
