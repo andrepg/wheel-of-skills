@@ -38,14 +38,15 @@ const configCharts = reactive({
       // Settings for radial angles
       r: {
         backgroundColor: "#f9fafb20",
-        min: 0,
+        min: -1,
         max: 10,
         grid: {
           color: "white",
         },
         ticks: {
-          color: "#fdf4ff",
-          backdropColor: "#c026d3",
+          display: false, // disable it now was a personal design choice
+          color: "#c026d3",
+          backdropColor: "#facc15",
           padding: 8,
           backdropPadding: 8,
           z: 50,
