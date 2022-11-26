@@ -30,7 +30,7 @@ const fnDecryptChartData = (chartData, password) =>
 
 const chartHistoryData = JSON.parse(
   fnDecryptChartData(window.history.state.chart, "SoyCaroMolina")
-);
+).filter((element) => element.type !== "FlowFormSectionBreakType");
 
 onMounted(() => {
   if (!chartHistoryData || chartHistoryData == "")
