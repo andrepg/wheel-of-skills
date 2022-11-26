@@ -26,8 +26,7 @@ const formLanguageModel = new LanguageModel({
   next: "Adelante",
   percentCompleted: ":percent% completado",
   invalidPrompt: "Por favor completa correctamente",
-  thankYouText: "Obrigado",
-  successText: "Tu solicitud está completa",
+  successText: "",
   longTextHelpText: ":shiftKey + :enterKey para hacer una quebra de línea",
   ariaOk: "Presione para continuar",
   ariaRequired: "Este campo es obligatorio",
@@ -55,9 +54,20 @@ const onSubmitForm = (questionList) => {
 <template>
   <FlowForm
     @submit="onSubmitForm"
-    :standalone="false"
+    :standalone="true"
     :progressbar="false"
     :questions="FormQuestions"
     :language="formLanguageModel"
-  />
+  >
+    <template #complete>
+      <div class="pb-10">
+        <h1 class="block mb-1">¡Gracias!</h1>
+
+        <p>
+          Ya tenemos todo listo para continuar. Por favor, clica en el botón
+          abajo para obtener tu resultado.
+        </p>
+      </div>
+    </template>
+  </FlowForm>
 </template>
