@@ -1,3 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.vff {
+  @apply justify-start px-2 mt-16 bg-transparent md:px-10 text-slate-100;
+}
+
+.vff span.f-tagline {
+  @apply text-yellow-200;
+}
+
+.vff span.f-sub,
+.vff p.f-description,
+.vff .text-muted,
+.vff .f-enter-desc {
+  @apply text-slate-100;
+}
+
+.vff .f-container {
+  @apply px-0;
+}
+
+.vff .field-opinionscale ul.f-radios li {
+  @apply text-lg font-bold text-purple-900;
+}
+
+.vff ul.f-radios li.f-selected,
+.vff ul.f-radios li:active {
+  @apply text-white bg-yellow-500 border-slate-100;
+}
+
+.vff .o-btn-action {
+  @apply font-bold text-purple-700 transition duration-200 ease-in-out bg-yellow-400;
+}
+
+.vff .o-btn-action:hover {
+  @apply bg-purple-900 text-slate-100;
+}
