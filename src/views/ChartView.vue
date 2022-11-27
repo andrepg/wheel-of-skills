@@ -3,9 +3,8 @@
     <h1 class="mb-3.5 text-3xl text-left text-white">
       <span class="font-bold">Acá está tu resultado</span>
       <small class="block text-sm text-normal"
-        >Preparamos un gráfico especial para usted. Mientras lo analisas,
-        comparta la página con sus amigos en redes sociales, al fin de la página
-        o en la barra de menu superior</small
+        >Preparamos un gráfico especial para usted. Mientras lo analizas no te
+        olvides compartir este enlace con tus amigos y conocidos.</small
       >
     </h1>
 
