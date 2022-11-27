@@ -1,6 +1,6 @@
 <script setup>
 import "@ditdot-dev/vue-flow-form/dist/vue-flow-form.css";
-import "@ditdot-dev/vue-flow-form/dist/vue-flow-form.theme-purple.css";
+import "@/assets/form.theme.css";
 
 import { useRouter } from "vue-router";
 import { FlowForm, LanguageModel } from "@ditdot-dev/vue-flow-form";
