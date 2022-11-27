@@ -21,9 +21,9 @@ const toggleMenu = () => (dataVue.showMobileMenu = !dataVue.showMobileMenu);
       <!-- Here's our main navigation link, to homepage -->
       <RouterLink
         to="/"
-        class="px-2 font-bold text-purple-900 uppercase transition duration-300 w-fit text-md hover:text-pink-800"
+        class="px-2 font-bold text-purple-900 uppercase transition duration-300 font-heading w-fit text-md hover:text-pink-800"
       >
-        Soy Caro Molina
+        💰 SOY CARO MOLINA
       </RouterLink>
 
       <!-- And now our mobile toggle container -->
@@ -44,7 +44,7 @@ const toggleMenu = () => (dataVue.showMobileMenu = !dataVue.showMobileMenu);
     </div>
 
     <ShareMenu
-      class="flex-col flex-wrap w-full gap-5 py-5 overflow-y-auto justify-evenly md:hidden"
+      class="flex-col flex-wrap w-full gap-6 py-6 overflow-y-auto h-fit justify-evenly md:hidden"
       :class="dataVue.showMobileMenu ? 'hidden' : 'flex'"
     />
   </nav>
